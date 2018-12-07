@@ -1,0 +1,141 @@
+#blog .content{
+    width: 1170px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 90px;
+}
+.pge-title-content{
+    width: calc(50% - 71px);
+    height: auto;
+    padding-left: 41px;
+    margin: 0 15px;
+}
+.pge-title-content h2{
+    font-size: 46px;
+    line-height: 53px;
+    font-weight: 800;
+    color: #404040;
+    margin: 83px auto 19px;
+}
+.pge-title-content h2 span{
+    color: #fb5353;
+    font-size: 80px;
+    display: block;
+    padding-bottom: 20px;
+}
+.pge-title-content p{
+    font-size: 20px;
+    line-height: 30px;
+    color: #454545;
+    overflow: hidden;
+}
+.grid{
+    position: relative;
+    margin-bottom: 31px;
+    overflow: hidden;
+    width: calc(50% - 30px);
+    height: auto;
+    background: #fb5353;
+    margin: 0 15px;
+}
+.figure{
+    background: #3085a3;
+}
+.grid:hover .figure, .grid1:hover .figure{
+    background-color: rgba(58,52,42,0);
+}
+.figure::before{
+    content: '';
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    border: 1px solid #fff;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .35s;
+}
+.grid:hover .img-responsive, .grid1:hover .img-responsive{
+    opacity: 0.4;
+}
+.grid:hover .effect-oscar p,.grid:hover .figure::before, .grid1:hover .effect-oscar p,.grid1:hover .figure::before{
+    opacity: 1;
+    transform: scale(1);
+}
+.grid .img-responsive, .grid1 .img-responsive{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity .35s;
+}
+.effect-oscar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 31px;
+    overflow: hidden;
+    width: calc(100% - 160px);
+    height: calc(100% - 160px);
+    padding: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+.effect-oscar h2{
+    font-size: 30px;
+    color: #fff;
+    font-weight: 400;
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+}
+.effect-oscar h2 span{
+    font-weight: 800;
+}
+.effect-oscar p{
+    font-weight: 400;
+    opacity: 0;
+    transition: all .35s;
+    transform: scale(0);
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.grid .figure > a, .grid1 .figure > a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: 200%;
+    font-size: 0;
+}
+.content .mid{
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+}
+.mid ul{
+    margin-bottom: 20px; 
+}
+.mid ul li{
+    margin-top: 30px;
+}
+.clearfix::before,.clearfix::after{
+    display: table;
+    content: " ";
+}
+.clearfix::after{
+    clear: both;
+}
+.grid1{
+    position: relative;
+    margin-bottom: 31px;
+    overflow: hidden;
+    width: calc(100% - 30px);
+    height: auto;
+    background: #fb5353;
+    margin: 0 15px;
+}

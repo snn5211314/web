@@ -1,0 +1,110 @@
+<!doctype html><!--声明当前文档类型 html5-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"><!--编码格式-->
+		<meta name="Keywords" content="关键字 关键词">
+		<meta name="Description" content="描述信息">
+		<title>Document</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{background:#000;}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+
+		<script>
+			/*
+				canvas就是一个画布，就是一个标签
+				怎么操控canvas标签？
+					js操作dom节点
+				怎么在上面画画呢？
+					getContext画笔，创建绘画(2d/3d) 只支持2d
+					95%的canvas操作都与画笔有关
+				初始化
+				绘制粉色小圆点
+					大小一样，位置不同
+				小圆点运动
+					canvas的粒子运动不同于生活中的物理运动
+					它是以不断的在前面绘画然后不断清除后面的粒子的运动过程(不断的画，不断的擦)
+				边界判断
+			*/
+			
+			var canvas = {};
+			canvas.animate = {
+				//初始化
+				init: function () {
+					var canvas = document.getElementById('canvas');
+					this.ctx = canvas.getContext('2d');
+					this.cW = window.innerWidth;	
+					this.cH = window.innerHeight;
+					canvas.width = this.cW;
+					canvas.height = this.cH;
+					this.num = 300;//圆点的数量
+					this.data = [];
+
+					for (var i = 0; i < this.num; i++) {//绘制300个圆点
+						this.data[i] = {
+							x: Math.random() * this.cW,
+							y: Math.random() * this.cH,
+							cX: Math.random() * 0.6,
+							cY: Math.random() * 0.6
+						}
+						this.drawCircle(this.data[i].x,this.data[i].y);
+					}
+				},
+				drawCircle: function (x,y) {
+					var ctx = this.ctx;
+					ctx.save();
+					ctx.beginPath();
+					ctx.fillStyle = "#ccc";
+					ctx.arc(x,y,1,0,2*Math.PI,false);
+					ctx.fill();
+					ctx.restore();
+				},
+				move: function () {
+					var self = this;
+					self.ctx.clearRect(0,0,self.cW,self.cH);
+					for (var i = 0; i < self.num; i++) {
+						self.data[i].x += self.data[i].cX;
+						self.data[i].y += self.data[i].cY;
+						
+						if (self.data[i].x > self.cW || self.data[i].x < 0) {
+							self.data[i].cX = -self.data[i].cX;
+						}
+						if (self.data[i].y > self.cH || self.data[i].y < 0) {
+							self.data[i].cY = -self.data[i].cY;
+						}
+
+						self.drawCircle(self.data[i].x,self.data[i].y);
+
+						for (var j = i +1; j < self.num; j++) {
+							if (Math.pow(self.data[i].x - self.data[j].x,2) + Math.pow(self.data[i].y - self.data[j].y,2) < 50 * 50) {
+								self.drawLine(self.data[i].x,self.data[i].y,self.data[j].x,self.data[j].y);
+							}
+						}
+					}
+				},
+				drawLine: function (x1,y1,x2,y2) {
+					var ctx = this.ctx;
+					var color = ctx.createLinearGradient(x1,y1,x2,y2);
+					color.addColorStop(0,"yellow");
+					color.addColorStop(1,"#0066cc");
+					ctx.save();
+					ctx.strokeStyle = color;
+					ctx.beginPath();
+					ctx.moveTo(x1,y1);
+					ctx.lineTo(x2,y2);
+					ctx.closePath();
+					ctx.stroke();
+					ctx.restore();
+				}
+			}
+			canvas.animate.init();
+
+			setInterval(function () {
+				canvas.animate.move();
+			},10);
+		</script>
+	</body>
+</html>

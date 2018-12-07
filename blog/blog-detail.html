@@ -1,0 +1,280 @@
+<!doctype html><!--声明当前文档类型 h5-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Keywords" content="关键词，关键字">
+        <meta name="Description" content="描述信息">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <title>博客 | Blog</title>
+        <link rel="stylesheet" href="css/common.css">
+         <link rel="stylesheet" href="css/index.css">
+        <script src="js/jquery.js"></script>
+        <style>
+            .blog-details {
+                width: 1002px;
+                margin: 0 auto;
+            }
+            .bog-header{
+                text-align: center;
+                padding-bottom: 62px;
+            }
+            .bog-header h3{
+                color: #404040;
+                font-weight: 800;
+                padding-bottom: 24px;
+                display: block;
+            }
+            .bog-header h3 span{
+                color: #fb5353;
+            }
+            .bog-header h2{
+                font-size: 36px;
+                font-weight: normal;
+            }
+            .img-responsive{
+                display: block;
+                max-width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+            #post-details .enter-content{
+                margin-top: 62px;
+            }
+            #post-details .enter-content p{
+                font-size: 16px;
+                line-height: 30px;
+                font-weight: 300;
+                margin: 0 0 10px 23px;
+            }
+            .comments-pan {
+                border-top: 2px solid #dedede;
+                padding-top: 15px;
+            }
+            .comments-pan h3{
+                border-bottom: 2px solid #dedede;
+                padding-bottom: 34px;
+                margin-bottom: 52px;
+                color: #404040;
+                font-weight: 800;
+                display: block;
+                font-size: 24px;
+            }
+            .comments-reply li {
+                display: block;
+                border-bottom: 2px solid #dedede;
+                overflow: hidden;
+                padding-bottom: 51px;
+                margin-bottom: 39px;
+            }
+            .comments-reply li figure {
+                float: left;
+                width: 70px;
+                background-color: #000;
+            }
+            .comments-reply li section {
+                float: left;
+                padding-left: 30px;
+                font-size: 16px;
+                line-height: 30px;
+                font-weight: 300;
+                color: #343434;
+                width: 88%;
+            }
+            .comments-reply li section h4 {
+                font-weight: 800;
+                color: #404040;
+                font-size: 21px;
+                margin-bottom: 6px;
+                margin-top: 0;
+            }
+            .comments-reply li section h4 a{
+                font-size: 16px;
+                color: #fb5353;
+                font-weight: 400;
+                display: inline-block;
+                padding-left: 20px;
+            }
+            .comments-reply li section .date-pan {
+                font-size: 14px;
+                line-height: 18px;
+                padding-bottom: 25px;
+            }
+            .reply-pan {
+                clear: both;
+                display: block;
+                margin-left: 100px;
+                padding-top: 39px;
+            }
+            .reply-pan li {
+                border-bottom: none;
+                border-top: 2px solid #dedede;
+                padding-bottom: 0;
+                margin-bottom: 0;
+                padding-top: 38px;
+            }
+            .commentys-form h4 {
+                color: #404040;
+                font-weight: 800;
+                padding-bottom: 24px;
+                display: block;
+                font-size: 24px;
+            }
+
+             #cform{
+                width: 1023px;
+                height: 282px;
+                margin: 40px auto 0;
+            }
+            
+            .commentys-form input[type="button"] {
+                padding: 0 36px;
+                text-transform: uppercase;
+                display: inline-block;
+                font-size: 21px;
+                line-height: 60px;
+                color: #FFF;
+                font-weight: bold;
+                text-align: center;
+                border: none;
+                outline: none;
+                background-color: #fb5353;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="blog">
+            <div class="head">
+                <div class="logo fl">
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+                <div class="fr menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="on"><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Cantact</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="blog-details">
+                    <article class="post-details" id="post-details">
+                        <header role="bog-header" class="bog-header">
+                            <h3><span>20</span> July 2016</h3>
+                            <h2> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Sed volutpat vitae facilisis sodales, eu nibh ultricies semper.</h2>
+                        </header>
+                        <figure>
+                            <img src="images/blog-images/blog-details-image.jpg" alt="" class="img-responsive">
+                        </figure>
+                        <div class="enter-content">
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat eu nibh ultricies semper. Vivamus porta, felis vitae facilisis sodales, felis est iaculis orci, et ornare sem mauris ut turpis. Pellentesque vitae tortor nec tellus hendrerit aliquam. Donec condimentum leo eu ullamcorper scelerisque pellentesque urna rhoncus.</p>
+                            <p>Praesent posuere sapien est, vitae bibendum risus iaculis ut. Phasellus porta libero eget turpis varius dapibus. Phasellus elementum tempor quam in consectetur. Donec a nisl vehicula metus accumsan lacinia. Cras vehicula massa dui. Quisque ac vehicula turpis. Duis sodales magna risus. Donec tellus risus, vulputate id finibus et, consectetur sit amet Praesent posuere sapien est, vitae bibendum risus iaculis ut. Phasellus porta lnisl.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec rhoncus iaculis eros nec dapibus. Vestibulum lacinia libero et metus rhoncus, vel convallis mi facilisis. Donec in augue nec est molestie gravida varius id sapien. Aliquam at augue ante. Quisque ut diam in nibh malesuada tempor. Proin elementum nisl ac erat finibus, ut viverra mauris lobortis. Pellentesque et ipsum nisl. Integer tincidunt, urna fermentum sodales mattis, ipsum libero mattis lacus, vitae semper risus magna ac mi. Donec auctor ante ornare, fringilla orci vitae, porttitor urna. Donec pretium eu mauris ac bibendum. Cras aliquam faucibus ligula, et porta arcu tincidunt id. Pellentesque viverra tortor vitae pellentesque placerat. </p>
+                        </div>
+                    </article>
+                    <!-- Comments -->
+                    <div class="comments-pan">
+                        <h3>3 Comments</h3>
+                        <ul class="comments-reply">
+                            <li>
+                                <figure>
+                                    <img src="images/blog-images/image-1.jpg" alt="" class="img-responsive">
+                                </figure>
+                                <section>
+                                    <h4>Anna Greenfield      <a href="#">Reply</a></h4>
+                                    <div class="date-pan">January 26, 2016</div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat eu nibh ultricies semper. Vivamus porta, felis vitae facilisis sodales, felis est iaculis orci, et ornare sem mauris ut turpis. Pellentesque vitae tortor nec tellus hendrerit aliquam. Donec condimentum leo eu ullamcorper scelerisque pellentesque urna rhoncus.
+                                </section>
+                                <ol class="reply-pan">
+                                    <li>
+                                        <figure>
+                                            <img src="images/blog-images/image-2.jpg" alt="" class="img-responsive">
+                                        </figure>
+                                        <section>
+                                            <h4>Johnathan Doe  <a href="#">Reply</a></h4>
+                                            <div class="date-pan">January 26, 2016</div>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat eu nibh ultricies semper. Vivamus porta, felis vitae facilisis sodales, felis est iaculis orci, et ornare sem mauris ut turpis. Pellentesque vitae tortor nec tellus hendrerit aliquam. Donec condimentum leo eu ullamcorper scelerisque pellentesque urna rhoncus.
+                                        </section>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="images/blog-images/image-3.jpg" alt="" class="img-responsive">
+                                </figure>
+                                <section>
+                                    <h4>Anna Greenfield  <a href="#">Reply</a></h4>
+                                    <div class="date-pan">January 26, 2016</div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat eu nibh ultricies semper. Vivamus porta, felis vitae facilisis sodales, felis est iaculis orci, et ornare sem mauris ut turpis. Pellentesque vitae tortor nec tellus hendrerit aliquam. Donec condimentum leo eu ullamcorper scelerisque pellentesque urna rhoncus.
+                                </section>
+                            </li>
+                        </ul>            
+                        <div class="commentys-form">
+                            <h4>Leave a comment</h4>
+                            <div class="row">
+                                <form action="" method="get" id="cform">
+                                    <div class="col-4 fl">
+                                        <input name="" type="text" placeholder="Whats your name *">
+                                    </div>
+                                    <div class="col-4 fl">
+                                        <input name="" type="email" placeholder="Whats your email *">
+                                    </div>
+                                    <div class="col-4 fl">
+                                        <input name="" type="url" placeholder="Runing a Website">
+                                    </div>
+                                     <div class="col-12" style="overflow:hidden;">
+                                        <textarea name="" cols="" rows="" placeholder="Whats in your mind"></textarea>
+                                    </div>
+                                    <div style="text-align:center">
+                                        <input name="" type="button" value="Post Comment">
+                                    </div>
+                                </form>
+                            </div>                    
+                        </div>
+                    </div>
+                </div>           
+            </div>
+            <div class="footer">
+                <h1>
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </h1>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html" title="Work">Work</a></li>
+                        <li><a href="about.html" title="About">About</a></li>
+                        <li><a href="blog.html" title="Blog">Blog</a></li>
+                        <li><a href="contact.html" title="Contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <ul class="social-icons">
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+                <p class="copy-right">© 2015  avana LLC.. All rights Resved</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var  menuBtn = $(".menu-btn")[0];
+            var menu = $(".menu");
+            menuBtn.onclick = function () {
+                $(this).toggleClass("on");
+                menu.fadeToggle().toggleClass("open");
+            }
+        </script>
+    </body>
+</html> 

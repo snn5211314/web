@@ -1,0 +1,116 @@
+<!doctype html><!--声明当前文档类型 h5-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Keywords" content="关键词，关键字">
+        <meta name="Description" content="描述信息">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <title>博客 | About</title>
+        <link rel="stylesheet" href="css/common.css">
+         <link rel="stylesheet" href="css/about.css">
+        <script src="js/jquery.js"></script>
+    </head>
+    <body>
+        <div id="blog">
+            <div class="head">
+                <div class="logo fl">
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+                <div class="fr menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li class="on"><a href="index.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Cantact</a></li>
+                </ul>
+            </div>
+            <div class="content"> 
+                <div style="width:100%;margin-bottom:30px;overflow:hidden;">
+                     <div class="col-6 title fl">
+                        <h2>
+                            <span>We Do</span>
+                             What we love to do.
+                        </h2>
+                        <p>Over 40,000 customers use our themes to power their websites and we love them.</p>
+                    </div>  
+                    <div class="col-6 fl">
+                        <div class="about-content">
+                             <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc, fiant sollemnes in futurum.</p>
+                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consueum formas humanitatis per seacula quarta deciEodem modo tythepi, qui nunc, fiant sollemnes in futurum.</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="author">
+                    <div class="col-4 fl">
+                        <figure>
+                            <img src="images/about-images/about-image-1.jpg" class="img-responsive">
+                            <div class="hover-info">
+                                <h3>John Doe</h3>
+                                <h5>The designer</h5>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-4 fl">
+                        <figure>
+                            <img src="images/about-images/about-image-2.jpg" class="img-responsive">
+                            <div class="hover-info">
+                                <h3>kristy Roan</h3>
+                                <h5>The Manager</h5>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-4 fl">
+                        <figure>
+                            <img src="images/about-images/about-image-3.jpg" class="img-responsive">
+                            <div class="hover-info">
+                                <h3>Jason takas</h3>
+                                <h5>The Founder</h5>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer">
+                <h1>
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </h1>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html" title="Work">Work</a></li>
+                        <li><a href="about.html" title="About">About</a></li>
+                        <li><a href="blog.html" title="Blog">Blog</a></li>
+                        <li><a href="contact.html" title="Contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <ul class="social-icons">
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+                <p class="copy-right">© 2015  avana LLC.. All rights Resved</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var  menuBtn = $(".menu-btn")[0];
+            var menu = $(".menu");
+            menuBtn.onclick = function () {
+                $(this).toggleClass("on");
+                menu.fadeToggle().toggleClass("open");
+            }
+        </script>
+    </body>
+</html>

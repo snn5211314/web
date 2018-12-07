@@ -1,0 +1,93 @@
+<!doctype html><!--声明当前文档类型 h5-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Keywords" content="关键词，关键字">
+        <meta name="Description" content="描述信息">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <title>博客 | Work-detail</title>
+        <link rel="stylesheet" href="css/common.css">
+         <link rel="stylesheet" href="css/work-detail.css">
+        <script src="js/jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div id="blog">
+            <div class="head">
+                <div class="logo fl">
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+                <div class="fr menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li class="on"><a href="index.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Cantact</a></li>
+                </ul>
+            </div>
+            <div class="content work-detail"> 
+                <div class="work-title col-4 fl">
+                    <h2>Project Name</h2>
+                    <a href="#">Visit online <i></i></a>
+                </div>    
+                <div class="col-8 fl">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat eu nibh ultricies semper. Vivamus porta, felis vitae facilisis sodales, felis est iaculis orci, et ornare sem mauris ut turpis. Pellentesque vitae tortor nec tellus hendrerit aliquam. Donec condimentum leo eu ull pellentesque urna rhoncus.</p>
+                    <p>elis est iaculis orci, et ornare sem mauris ut turpis. Pellentesque vitae tortor nec tellus hendrerit aliquam. Donec condimentum leo eu ullamcorper scelerisque pellentes rhoncus.</p>
+                    <p>
+                        <strong>Role</strong><br>
+                        Branding, Identity, Web Design, UX / UI
+                    </p>
+                </div>
+                <div class="imgs">
+                    <ul>
+                        <li><img src="images/work/works-image-1.jpg" alt="" class="img-responsive"></li>
+                        <li><img src="images/work/works-image-2.jpg" alt="" class="img-responsive"></li>
+                        <li><img src="images/work/works-image-3.jpg" alt="" class="img-responsive"></li>
+                    </ul>
+                </div>     
+            </div>
+            <div class="footer">
+                <h1>
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </h1>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html" title="Work">Work</a></li>
+                        <li><a href="about.html" title="About">About</a></li>
+                        <li><a href="blog.html" title="Blog">Blog</a></li>
+                        <li><a href="contact.html" title="Contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <ul class="social-icons">
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+                <p class="copy-right">© 2015  avana LLC.. All rights Resved</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var  menuBtn = $(".menu-btn")[0];
+            var menu = $(".menu");
+            menuBtn.onclick = function () {
+                $(this).toggleClass("on");
+                menu.fadeToggle().toggleClass("open");
+            }
+        </script>
+    </body>
+</html>
