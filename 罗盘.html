@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>时间罗盘</title>
+		<style>
+			html,body{
+			    width:100%;
+			    height:100%;
+			    background-color: #000;
+			    overflow: hidden;
+			}
+			#clock {
+			    position: relative;
+			    width: 100%;
+			    height: 100%;
+			    background: black;
+			}
+			.label{
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    display: inline-block;
+			    color: #4d4d4d;
+			    text-align: center;
+			    padding: 0 5px;
+			    font-size: 19px;
+			    transition: all 1s;
+			    transform: translate(-50%,-50%);
+			    transform-origin: 0% 0%;
+			}
+			.now{
+			    color: #fff;
+			}
+			.center-box {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				margin-left: -25px;
+				margin-top: -25px;
+				border: 1px solid #ddd;
+				border-radius: 50%;
+				text-align: center;
+				color: #fff;
+			}
+		
+			.month-item {
+				transform-origin: -80px 50%;
+			}
+			.days-item {
+				transform-origin: -160px 50%;
+			}
+			.xingqi-item {
+				transform-origin: -240px 50%;
+			}
+			.hours-item {
+				transform-origin: -320px 50%;
+			}
+			.minutes-item {
+				transform-origin: -400px 50%;
+			}
+			.seconds-item {
+				transform-origin: -480px 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" id="clock">
+			<!-- 中心姓氏 -->
+			<div class="center-box">张</div>
+		</div>
+		
+		
+		<script>
+			const utils = {
+				getDuration: (date) => {// 获取一个月有多少天  
+					let dt = new Date(date)    
+					const year = dt.getYear()
+					const month = dt.getMonth()  
+					return new Date(year, month + 1, 0).getDate()  
+				},
+				mapRelations: {
+					0: "零",
+					1: "一",
+					2: "二",
+					3: "三",
+					4: "四",
+					5: "五",
+					6: "六",
+					7: "七",
+					8: "八",
+					9: "九",
+					10: "十",
+					20: "二十",
+					30: "三十",
+					40: "四十",
+					50: "五十",
+					60: '六十'
+				},
+				dealMap: (num) => {
+					if (num % 10 === 0 || num < 10) {
+						return utils.mapRelations[num]
+					} else if (num < 20) {
+						return utils.mapRelations[10] + utils.mapRelations[num - 10]
+					} else if (num < 30) {
+						return utils.mapRelations[20] + utils.mapRelations[num - 20]
+					} else if (num < 40) {
+						return utils.mapRelations[30] + utils.mapRelations[num - 30]
+					} else if (num < 50) {
+						return utils.mapRelations[40] + utils.mapRelations[num - 40]
+					} else if (num < 60) {
+						return utils.mapRelations[50] + utils.mapRelations[num - 50]
+					}
+				}
+			}
+			const app = {
+				nodeList: {
+					month: [],
+					days: [],
+					xingqi: [],
+					hours: [],
+					minutes: [],
+					seconds: []
+				},
+				mapRelation: ['year', 'month', 'days', 'xingqi', 'hours', 'minutes', 'seconds'],
+				init() {
+					let time = new Date()
+					const daylen = utils.getDuration(time)
+					this.clockEl = document.getElementById('clock')
+					
+					this.xingqi = new Array(7).fill(1).map((item,index) => {
+						if (index + 1 === 7) {
+							return '周日'
+						}
+						return '周' + utils.dealMap(index + 1)
+					})
+					this.days = new Array(daylen).fill(1).map((item,index) => {
+						return utils.dealMap(index + 1) + '号'
+					})
+					this.months = new Array(12).fill(1).map((item,index) => {
+						return utils.dealMap(index + 1) + '月'
+					})
+					this.hours = new Array(24).fill(1).map((item,index) => {
+						return utils.dealMap(index) + '点'
+					})
+					this.minutes = new Array(60).fill(1).map((item,index) => {
+						return utils.dealMap(index + 1) + '分'
+					})
+					this.seconds = new Array(60).fill(1).map((item,index) => {
+						return utils.dealMap(index + 1) + '秒'
+					})
+					this.creatElement.initCreate()
+				},
+				creatElement: {
+					initCreate() {
+						this.createMonthDom()
+						this.createDaysDom()
+						this.createMinutesDom()
+						this.creatHoursDom()
+						this.createSecondsDom()
+						this.createXingqiDom()
+					},
+					createMonthDom() {
+						for (let i = 0; i < app.months.length; i++) {
+							let temp = this.createDom("month-item", app.months[i], app.months.length, i, 1)
+							app.clockEl.appendChild(temp)
+							app.nodeList['month'].push(temp)
+						}
+					},
+					createDaysDom() {
+						for (let i = 0; i < app.days.length; i++) {
+							let temp = this.createDom("days-item", app.days[i], app.days.length, i, 2)
+							app.clockEl.appendChild(temp)
+							app.nodeList['days'].push(temp)
+						}
+					},
+					createMinutesDom() {
+						for (let i = 0; i < app.minutes.length; i++) {
+							let temp = this.createDom("minutes-item", app.minutes[i], app.minutes.length, i, 5)
+							app.clockEl.appendChild(temp)
+							app.nodeList['minutes'].push(temp)
+						}
+					},
+					creatHoursDom() {
+						for (let i = 0; i < app.hours.length; i++) {
+							let temp = this.createDom("hours-item", app.hours[i], app.hours.length, i, 4)
+							app.clockEl.appendChild(temp)
+							app.nodeList['hours'].push(temp)
+						}
+					},
+					createSecondsDom() {
+						for (let i = 0; i < app.seconds.length; i++) {
+							let temp = this.createDom("seconds-item", app.seconds[i], app.seconds.length, i, 6)
+							app.clockEl.appendChild(temp)
+							app.nodeList['seconds'].push(temp)
+						}
+					},
+					createXingqiDom() {
+						for (let i = 0; i < app.xingqi.length; i++) {
+							let temp = this.createDom("xingqi-item", app.xingqi[i], app.xingqi.length, i, 3)
+							app.clockEl.appendChild(temp)
+							app.nodeList['xingqi'].push(temp)
+						}
+					},
+					createDom(className, content, len, i, j) {
+						var div = document.createElement('div');
+						div.classList.add(className);
+						div.classList.add('label');
+						div.innerText = content;
+						var deg = 360 / len * i;
+						div.style.transform = 'translate(' + j * 80 + 'px,-50%)' + ' rotate(' + deg + 'deg)';
+						return div;
+					}
+				},
+				run() {
+					var now = new Date();
+					// 获得月 日期 小时 分钟 秒钟
+					var month = now.getMonth();
+					var day = now.getDate();
+					var week = now.getDay();
+					var hour = now.getHours();
+					var minute = now.getMinutes();
+					var seconds = now.getSeconds();
+					var timeArr = [0, month, day-1, week, hour, minute, seconds]
+					this.clearColor()
+					this.rotateTransition(timeArr);
+					this.addColor(timeArr)
+				},
+				rotateTransition(timeArr) {
+					Object.keys(app.nodeList).forEach(key => {
+						let i = app.mapRelation.findIndex(k => k === key)
+						for (var j in app.nodeList[key]) {
+							var temp = app.nodeList[key][j];
+							var deg = 360 / app.nodeList[key].length * (j - timeArr[i]);
+							temp.style.transform = 'translate(' + i * 80 + 'px,-50%)' + ' rotate(' + deg + 'deg)';
+						}
+					})
+					
+						
+				},
+				addColor(timeArr) {
+				    for (var i = 1; i < timeArr.length; i++) {
+				        var index = timeArr[i];
+						if (app.mapRelation[i] === 'seconds') {
+							console.log(i, index, app.mapRelation[i], app.nodeList[app.mapRelation[i]].length)
+						}
+				        app.nodeList[app.mapRelation[i]] && app.nodeList[app.mapRelation[i]][index].classList.add('now')
+				    }
+				},
+				clearColor() {
+				    var now = document.querySelectorAll('.now');
+				    now.forEach(function (item) {
+				        item.classList.remove('now');
+				    })
+				}
+			}
+			
+			
+			
+			app.init()
+			console.log(app.nodeList)
+			setInterval(function () {
+				app.run()
+			}, 1000)
+		</script>
+	</body>
+</html>
