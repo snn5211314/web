@@ -1,0 +1,20 @@
+{
+  "name": "study-sanbbdom",
+  "version": "1.0.0",
+  "description": "学习虚拟dom和diff算法",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "keywords": [
+    "snabbdom"
+  ],
+  "author": "zt",
+  "license": "ISC",
+  "devDependencies": {
+    "snabbdom": "^2.1.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
