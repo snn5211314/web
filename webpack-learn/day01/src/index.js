@@ -1,1 +1,3 @@
-console.log('你好webpack！！！')
+import a from './a'
+require('./a.css')
+console.log(a)
